@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+    <lightning:layout>
+        <lightning:layoutItem size="4">
+            <c:Studentform />
+        </lightning:layoutItem>
+        <lightning:layoutItem size="8">
+            <c:StudentList />
+        </lightning:layoutItem>
+    </lightning:layout>
+
+</aura:component>

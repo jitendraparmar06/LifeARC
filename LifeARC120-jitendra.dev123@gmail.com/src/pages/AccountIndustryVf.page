@@ -1,0 +1,27 @@
+<apex:page controller="AccountIndustryApex">
+    <apex:form >
+        
+        <apex:pageBlock >
+            <apex:outputText value="Account Industry"/> &nbsp; &nbsp;
+            <apex:selectList value="{!accIndustry}" multiselect="false" size="1" >
+                <apex:selectOptions value="{!MySelectOptions}"/>
+                <apex:actionSupport event="onchange" action="{!selectedMethod}" reRender="show,showmsg"/>              
+            </apex:selectList> 
+            
+        </apex:pageBlock>  
+        
+        <apex:outputPanel title="List of Accounts" id="show">
+            <apex:pageBlock rendered="{!selected}">
+                
+                <apex:pageBlockTable value="{!accList}" var="a">
+                    <apex:column value="{!a.Name}"/>
+                    <apex:column value="{!a.Industry}"/>
+                </apex:pageBlockTable>
+                
+            </apex:pageBlock>
+        </apex:outputPanel>
+        <apex:outputPanel id="showmsg"> 
+            <apex:outputText Value="There is no Account for Selected Industry" rendered="{!!selected}"/>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

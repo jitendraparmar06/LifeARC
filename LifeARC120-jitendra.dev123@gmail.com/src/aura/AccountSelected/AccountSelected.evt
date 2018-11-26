@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT">
+    <aura:attribute name="account" Type="Account"/>
+    <aura:attribute name="target" Type="String"/>
+</aura:event>

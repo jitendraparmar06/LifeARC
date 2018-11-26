@@ -1,0 +1,35 @@
+<aura:component controller="StudentController" 
+				implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+				access="global" >
+    
+    <!-- Include Static Resource-->
+    <ltng:require styles="/resource/bootstrap/css/bootstrap.min.css" 
+				  scripts="/resource/bootstrap/js/jquery.js,/resource/bootstrap/js/bootstrap.min.js"/>
+    
+    <!-- Define Attribute-->
+    <aura:attribute name="student" type="Student__c" default="{'sobjectType': 'Student__c',
+                         'Name': '',
+                         'DOB__c': '',
+                         'Email__c': '', 
+                         'Qualification__c': ''
+                       }"/>
+    <div class="container-fluid">
+        <h3>Please Enter The Student Information</h3>
+        <div class="form-group">
+            <label>Name</label>
+            <ui:inputText class="form-control" value="{!v.student.Name__c}"/>
+        </div>
+        <div class="form-group">
+            <label>DOB</label>
+            <ui:inputText class="form-control" value="{!v.student.DOB__c}"/>
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            <ui:inputText class="form-control" value="{!v.student.Email__c}"/>
+        </div>
+       
+    </div>
+    <div class="col-md-4 text-center">
+        <ui:button class="btn btn-default" press="{!c.create}">Create</ui:button>
+  </div>
+</aura:component>

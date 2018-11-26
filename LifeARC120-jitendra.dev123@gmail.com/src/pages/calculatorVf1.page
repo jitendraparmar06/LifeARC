@@ -1,0 +1,48 @@
+<apex:page id="p1">
+    <script type="text/javascript">
+    function maths(){
+        var d1= parseInt(document.getElementById("p1:f1:pb1:v1").value);
+        alert('this is a sumA value'+d1);
+        var d2= parseInt(document.getElementById("p1:f1:pb1:v2").value);
+        alert('this is a sumA value'+d2);
+        add(d1,d2);  
+    }
+    function add(var a1,var a2){
+        var a;
+        a= a1+a2;
+        document.getElementById("p1:f1:pb2:a").value =a;
+        sub(a1,a2);
+    }
+    function sub(var s1,var s2){
+        var a;
+        a= s1+s2;
+        document.getElementById("p1:f1:pb2:s").value =a;
+        mul(s1,s2);
+    }
+    function mul(var m1,var m2){
+        var a;
+        a= m1+m2;
+        document.getElementById("p1:f1:pb2:m").value =a;
+        div(m1,m2);
+    }
+    function div(var d1,var d2){
+        var a;
+        a= d1+d2;
+        document.getElementById("p1:f1:pb2:d").value =a;
+        sub(d1,d2);
+    }
+    </script>
+    <apex:form id="f1">
+        <apex:pageBlock id="pb1">
+            <apex:inputText id="v1"/>
+            <apex:inputText id="v2"/>
+            <apex:commandButton value="submit" onClick="maths()"/>
+        </apex:pageBlock>
+        <apex:pageBlock id="pb2">
+            <apex:inputText id="a"/>
+            <apex:inputText id="s"/>
+            <apex:inputText id="m"/>
+            <apex:inputText id="d"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

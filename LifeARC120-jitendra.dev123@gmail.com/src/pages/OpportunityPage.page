@@ -1,0 +1,3 @@
+<apex:page >
+<analytics:reportChart reportId="00O7F000006YKmA" size="small"></analytics:reportChart>
+</apex:page>

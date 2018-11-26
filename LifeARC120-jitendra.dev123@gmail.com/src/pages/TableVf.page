@@ -1,0 +1,19 @@
+<apex:page standardController="Account" recordSetVar="accounts"
+tabstyle="account" sidebar="false">
+<apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!accounts}" var="a">
+33
+Getting A Quick Start with Visualforce Editing a Table of Data in a Page
+<apex:column value="{!a.name}"/>
+<apex:column headerValue="Service Level Agreement">
+<apex:inputField value="{!a.SLA__c}"/>
+</apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <div>
+        <div>
+            <c:AccountMap11 />
+        </div>
+        <div>
+            <c:AccountListCmp/>
+        </div>
+    </div>
+
+
+	
+</aura:component>

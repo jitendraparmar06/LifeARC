@@ -1,0 +1,7 @@
+<apex:page controller="AccountClassNew" sidebar="true" showHeader="true">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:commandButton value="submit" action="{!doSave}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

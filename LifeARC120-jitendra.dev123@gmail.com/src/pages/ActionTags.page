@@ -1,0 +1,46 @@
+<apex:page sidebar="false" showHeader="false">
+    <style>
+        span{
+            color:green;
+        }
+        #test{
+            color:Red;
+        }
+        .style{
+            color:Orange;
+        }
+        
+    </style>
+    <apex:form >
+    <center><div><b><span>Employee Record 1</span></b></div></center><br/>
+    <center><div><b><span id="test">Employee Record 2</span></b></div></center><br/>
+    <center><div><b><span class="style">Employee Record 3</span></b></div></center><br/>
+        <table border="1" cellPadding="5" width="100%">
+            <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Subject</th>
+                <th>Company</th>
+                <th>Salary</th>
+            </tr>
+            <tr>
+                <td>Ankit</td>
+                <td>Rai</td>
+                <td>Salesforcce</td>
+                <td>Techila</td>
+                <td>3,000,00</td>
+            </tr>
+            <tr>
+                <td>Jiten</td>
+                <td>Singh</td>
+                <td>Salesforcce</td>
+                <td>Techila</td>
+                <td>,000,00</td>
+            </tr>
+        </table>
+        <div>
+            <div>A</div>
+            <div>B</div>
+        </div>
+    </apex:form> 
+</apex:page>

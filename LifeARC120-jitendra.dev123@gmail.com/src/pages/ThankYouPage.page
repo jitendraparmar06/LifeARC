@@ -1,0 +1,13 @@
+<apex:page >
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:outputText >
+                <p> <b>Thanks for giving this valuable information to us</b>
+                    
+                    </p>
+                </apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

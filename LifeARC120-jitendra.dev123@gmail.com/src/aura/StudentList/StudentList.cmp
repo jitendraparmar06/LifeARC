@@ -1,0 +1,13 @@
+<aura:component  controller="StudentController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+ <aura:attribute name="students" type="Object" />
+    <aura:attribute name="columns" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+   <!-- <aura:handler event="c:updateStudents" action="{!c.handleUpdateStudents}" /> -->
+    <div style="height: 500px">
+        <lightning:datatable title="Student List"
+                             keyField="id"
+                             data="{! v.students }"
+                             columns="{! v.columns }"
+                             hideCheckboxColumn="false"/>
+    </div>
+</aura:component>

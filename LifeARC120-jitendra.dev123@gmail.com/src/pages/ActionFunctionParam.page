@@ -1,0 +1,23 @@
+<apex:page controller="ActionFunctionController">
+    <script type="text/css">
+    	function jsMethod(Test){
+         actionFun(document.getElementById(Test).value;);
+        
+        }
+    </script>
+    <apex:form >
+    	<apex:pageBlock >
+            
+        	<apex:actionFunction name="actionFun" action="{!createAccount}" rerender="block1" status="myStatus">
+                <apex:param name="param1" value="" assignTo="{!accName}"/>
+                <apex:actionStatus startText="starting" id="myStatus" />
+            </apex:actionFunction>
+              <apex:commandButton value="create Account" onClick="jsMethod('{!$Component.param1}')" />
+       </apex:pageBlock>
+        
+        <apex:pageBlock id="block1">
+            <apex:outputText value="{!accName}"/>
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

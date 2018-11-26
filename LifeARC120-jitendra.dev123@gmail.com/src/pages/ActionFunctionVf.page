@@ -1,0 +1,23 @@
+<apex:page controller="ActionFunctionController" sidebar="false" showHeader="true" tabStyle="Account">
+    <apex:sectionHeader title="Account Detail" subtitle="Account Information" rendered="true" help="google link" printUrl="https://www.google.com" description="this is Account description"/>
+    <style type="text/css">
+    	.myClass{
+         Color:red;
+         Background-Color:black;
+        }
+    </style>
+    <apex:form id="form1">
+    	<apex:pageBlock >
+            <apex:pageBlockSection >
+        		Account Name: <apex:inputText value="{!accName}"/>
+            	<apex:actionFunction name="actionFun" action="{!createAccount}" rerender="block2"/>
+                <apexpageBlockButton>
+            		<apex:commandButton value="create Account" onclick="actionFun()" style="Color:red;Background-Color:red" />
+                </apexpageBlockButton>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+       <apex:pageBlock id="block2">
+           <apex:outputText value="{!accName}"/>
+       </apex:pageBlock>
+   </apex:form>
+</apex:page>

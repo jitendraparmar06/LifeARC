@@ -1,0 +1,21 @@
+.THIS {
+    list-style-type: none;
+    padding: 10;
+    margin: 0;
+}
+
+
+.THIS li {
+    border-bottom: solid 1px #DDDDDD;
+    padding: 8px;
+}
+
+.THIS p {
+    margin: 4px;
+} 
+.THIS.green{
+ list-style-type: none;
+    padding: 10;
+    margin: 0;
+    color:blue;
+}

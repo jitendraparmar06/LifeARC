@@ -1,0 +1,17 @@
+<apex:page controller="ActionSupportController">
+    <apex:form >
+      <apex:pageBlock >
+    	<apex:outputPanel >
+            <apex:inputText value="{!accName}">
+                <apex:actionSupport event="onkeyup" action="{!doQuery}" rerender="block"/>
+                
+            </apex:inputText>
+        </apex:outputPanel>
+     </apex:pageBlock>
+     <apex:pageBlock id="block">
+         <apex:pageBlockTable value="{!accList}" var="a">
+             <apex:column value="{!a.Name}"/>
+         </apex:pageBlockTable>
+     </apex:pageBlock>   
+   </apex:form>
+</apex:page>

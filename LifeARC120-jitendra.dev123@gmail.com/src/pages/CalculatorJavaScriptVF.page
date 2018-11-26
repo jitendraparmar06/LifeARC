@@ -1,0 +1,50 @@
+<apex:page sidebar="false" id="p1">
+    <script>
+    function operation(){
+        var a,b;
+        a=parseInt(document.getElementById('p1:f1:n1').value);
+             alert('this is a first value'+a);
+        b=parseInt(document.getElementById('p1:f1:n2').value);
+             alert('this is a first value'+b);
+        sum(a,b);
+        sub(a,b);
+        mul(a,b);
+        div(a,b);
+    }
+    function sum(p,q){
+        var c;
+        c= p+q;
+        document.getElementById("p1:f1:pb:show1").value = c;
+    }
+    function sub(p,q){
+        var c;
+        c= p-q;
+        document.getElementById("p1:f1:pb:show2").value = c;
+    }
+    function mul(p,q){
+        var c;
+        c= p*q;
+        document.getElementById("p1:f1:pb:show3").value = c;
+    }
+    function div(p,q){
+        var c;
+        c= p/q;
+        document.getElementById("p1:f1:pb:show4").value = c;
+    }
+    </script>
+    <apex:form id="f1">
+        N1: <apex:inputText id="n1"/><br/>
+        N2: <apex:inputText id="n2"/><br/>
+        <apex:commandButton value="operation" onclick="operation()"/><br/>
+        <apex:pageBlock id="pb">
+            <apex:outputText value="ADD"/>&nbsp;&nbsp;&nbsp;
+            <apex:inputText id="show1"/>
+            <apex:outputText value="SUB"/>&nbsp;&nbsp;&nbsp;
+            <apex:inputText id="show2"/>
+            <apex:outputText value="MUL"/>&nbsp;&nbsp;&nbsp;
+            <apex:inputText id="show3"/>
+            <apex:outputText value="DIV"/>&nbsp;&nbsp;&nbsp;
+            <apex:inputText id="show4"/>    
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

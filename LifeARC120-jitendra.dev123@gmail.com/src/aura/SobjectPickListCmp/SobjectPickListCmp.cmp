@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global"  controller="SobjectListController">
+    <aura:attribute name="lists" type="List"/>
+    <aura:handler name="init" action="{!c.doinit}" value="{!this}"/>
+    <div aura:id="page">
+        <div class="container">
+            <ui:inputSelect label="Select Object" multiple="false" class="lightninginputselect" aura:id="Select">
+                 <ui:inputSelectOption text="--None--" label="--None--"/>
+                <aura:iteration items="{!v.lists}" var="item">
+                    <ui:inputSelectOption text="{!item}" label="{!item}"/>
+                </aura:iteration> 
+            </ui:inputSelect>
+        </div>
+        <div class="container">
+            <ui:button label="Create Record" press="{!c.doCreateRecord}"/> 
+        </div>
+    </div>
+</aura:component>
