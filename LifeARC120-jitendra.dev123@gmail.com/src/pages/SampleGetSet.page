@@ -1,0 +1,17 @@
+<apex:page controller="SampleGetSet">
+    <apex:form >
+    <apex:image url="{!URLFOR($Resource.Logo, 'Images/download.jpg')}" width="50" height="50"/>
+    <apex:image url="{!URLFOR($Resource.Logo, 'Images/th.jpg')}" width="50" height="50"/>
+        <apex:pageBlock >
+            
+            <apex:inputText value="{!userInput}"/><br/>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="submit" reRender="show"/>
+           </apex:pageBlockButtons>
+        </apex:pageBlock>
+            <apex:pageBlock id="show">
+                <apex:outputText value="{!userInput}"/>
+            
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

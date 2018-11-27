@@ -1,0 +1,49 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+
+                access="global">
+
+    <lightning:overlayLibrary aura:id="overlayLib"/>    
+
+    <div  class="slds-page-header slds-col slds-has-flexi-truncate slds-media__body">
+
+        <div class="slds-size_4-of-12">
+
+            <div class="slds-text-align_left slds-m-around_x-small slds-p-left_large slds-p-right_large ">
+
+                <div  >
+
+                    <lightning:input class="mypopover" value="mypopover" onfocus="{!c.handleShowPopover}" label="Name" placeholder="Enter name" name="This is Full Name" >
+
+                        
+
+                    </lightning:input>
+
+                </div>
+
+                
+
+            </div> 
+
+            <div class="slds-text-align_left slds-m-around_x-small slds-p-left_large slds-p-right_large ">
+
+                <div  >
+
+                    <lightning:input class="mypopover1" value="mypopover1" onfocus="{!c.handleShowPopover}" label="Address" placeholder="Enter Address" name="Address:Street,City,Country,Postal Code" />
+
+                </div>
+
+                
+
+            </div> 
+
+            <div class="slds-align_absolute-center">
+
+                <lightning:button name="popover" label="Show Popover" onclick="{!c.handleShowPopover}"/>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aura:component>

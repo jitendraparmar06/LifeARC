@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+   <aura:attribute name="map" type="Object"/> 
+    <aura:handler event="c:AccountEventLoaded" action="{!c.accountsLoaded}"/>
+    <aura:handler event="c:AccountSelected122" action="{!c.accountSelected}"/>
+    <ltng:require styles="/resource/leaflet/leaflet.css"
+        scripts="/resource/leaflet/leaflet.js"
+        afterScriptsLoaded="{!c.jsLoaded}" />
+    <div id="map"></div>
+</aura:component>

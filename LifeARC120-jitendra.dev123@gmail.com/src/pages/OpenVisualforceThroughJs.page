@@ -1,0 +1,15 @@
+<apex:page standardController="Contact" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:commandButton value="Open vf Page" onclick="OpenVfpageConfrim()"/>
+        </apex:pageBlock>
+    
+    <script>
+      function OpenVfpageConfrim(){
+        var confirmFlag =confirm('Do you want to open a new visualforce page?');
+        if(confirmFlag == true)
+           window.open('/apex/YourNameOfVisualforcePage');
+      }
+     </script>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,26 @@
+<apex:page controller="CalculatorClass" sidebar="false" docType="html-5.0">
+    <apex:form >
+        <apex:pageBlock title="Calculator">
+            <apex:pageBlockSection columns="2" title="Mathematical Operations" collapsible="true"  >           
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Enter X value </apex:outputLabel>
+                    <apex:inputText value="{!input1}"/>                
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Enter Y value </apex:outputLabel>
+                    <apex:inputText value="{!input2}"/>    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <center><apex:outputLabel >Result </apex:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:inputText value="{!result}" id="show"/>   
+            </center><br/>
+            <center><apex:commandButton value="Addition" action="{!add}" reRender="show"/>&nbsp; 
+                <apex:commandButton value="Subtraction" action="{!sub}" reRender="show" />&nbsp;
+                <apex:commandButton value="Multiplication" action="{!mul}" reRender="show"/> &nbsp;
+                <apex:commandButton value="Division" action="{!div}" reRender="show"/> 
+            </center> 
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>

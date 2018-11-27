@@ -1,0 +1,11 @@
+<apex:page standardController="Account">
+    <apex:variable var="newUI" value="newSkinOn" 
+        rendered="{!$User.UIThemeDisplayed = 'Theme3'}">
+        currently insalesforce classic
+    </apex:variable>
+    <apex:variable var="oldUI" value="oldSkinOn" 
+        rendered="{!$User.UIThemeDisplayed != 'Theme3'}">
+        currently in salesforce litening
+    </apex:variable>
+    <!-- Continue page design -->
+</apex:page>

@@ -1,0 +1,18 @@
+<apex:page controller="CustomerServiceController">
+    	<apex:form >
+            <apex:pageBlock title="New Customer">
+            	<apex:pageBlockSection title="Personel Information">
+                	<apex:inputField value="{!objA.Name}"/>
+                        <apex:inputField value="{!objA.Phone}"/>
+                </apex:pageBlockSection>
+                        <apex:pageBlockSection title="Address Information">
+                	<apex:inputField value="{!objA.BillingCity}"/>
+                        <apex:inputField value="{!objA.BillingCountry}"/>
+                </apex:pageBlockSection>
+                        
+                <apex:pageBlockButtons >
+                	<apex:commandButton value="save" action="{!doSave}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

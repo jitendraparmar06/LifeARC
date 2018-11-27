@@ -1,0 +1,16 @@
+<aura:component controller="AccountController11" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+ 
+    <aura:attribute name="accounts" type="Account[]"/>
+    <aura:registerEvent name="accountEventLoaded" type="c:AccountEventLoaded"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <ul>
+    <aura:iteration items="{!v.accounts}" var="account">
+        <c:AccountItem account="{!account}"/>
+    </aura:iteration>
+        
+    </ul>
+
+
+	
+</aura:component>

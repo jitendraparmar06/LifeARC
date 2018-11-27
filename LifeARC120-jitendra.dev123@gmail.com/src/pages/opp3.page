@@ -1,0 +1,54 @@
+<apex:page controller="newOpportunityController" sidebar="false" tabStyle="Opportunity" >
+        
+        <script>
+        function confirmCancel() {
+            var isCancel = confirm("Are you sure you wish to cancel?");
+            if (isCancel) return true;
+            return false;
+        }
+        </script>
+    <style>
+    .color{color:red}
+    </style>
+
+
+    <apex:sectionHeader title="New Customer Opportunity" subtitle="Step 3 of 3" help="https://www.google.com"/>
+    <apex:form >
+        <apex:pageBlock title="Confirmation">
+            <apex:outputPanel >
+                 <div style="text-align: center">
+                    <apex:commandButton style="color:green" action="{!step2}" value="Previous"/>
+                    <apex:commandButton style="color:green" action="{!save}" value="Save"/>
+                    <apex:commandButton style="color:green" action="{!cancel}" value="Cancel"
+                                        onclick="return confirmCancel()" immediate="true"/>
+                </div> 
+            </apex:outputPanel>
+            <apex:pageBlockSection title="Account Information" collapsible="true">
+                <apex:outputField value="{!account.name}"/> 
+                <apex:inputField value="{!account.Industry}"/>
+                <apex:inputField value="{!account.Type}"/>
+               <apex:outputField value="{!account.site}"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Information" collapsible="true">
+                <apex:outputField value="{!contact.firstName}"/>
+                <apex:outputField value="{!contact.lastName}"/>
+                <apex:outputField value="{!contact.phone}"/>
+                <apex:inputField value="{!contact.Email}"/>
+                <apex:outputField value="{!role.role}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Opportunity Information" collapsible="true">
+                <apex:outputField value="{!opportunity.name}"/>
+                <apex:outputField value="{!opportunity.amount}"/>
+                <apex:outputField value="{!opportunity.closeDate}"/>
+            </apex:pageBlockSection>
+            <apex:outputPanel >
+                <div style="text-align: center">
+                    <apex:commandButton style="color:green" action="{!step2}" value="Previous"/>
+                    <apex:commandButton style="color:green" action="{!save}" value="Save"/>
+                    <apex:commandButton style="color:green" action="{!cancel}" value="Cancel"
+                                        onclick="return confirmCancel()" immediate="true"/>
+                </div>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

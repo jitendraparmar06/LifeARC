@@ -1,0 +1,15 @@
+<apex:page controller="ActionSupport1Class" sidebar="false" showHeader="true">
+   <apex:form >
+    	<apex:pageBlock >
+            <apex:outputText value="{!firstValue}"/><br/>
+            <apex:outputText value="{!secondValue}"/><br/>
+               <apex:inputText >
+               		<apex:actionSupport event="onkeyup" action="{!demoController}" rerender="pgb1" status="myStatus"/>
+                    <apex:actionStatus startText="processing..."  id="myStatus"/>
+               </apex:inputText>
+      </apex:pageBlock>
+      <apex:pageBlock id="pgb1">
+             <apex:outputText value="{!secondValue}"/>
+       </apex:pageBlock>    
+   </apex:form>
+</apex:page>

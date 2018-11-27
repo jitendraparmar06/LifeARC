@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable" >
+    <!-- PAGE HEADER -->
+    <div class="slds-page-header" role="banner">
+        <div class="slds-grid">
+            <div class="slds-col slds-has-flexi-truncate">
+                <!-- HEADING AREA -->
+                <p class="slds-text-title_caps slds-line-height_reset">Contacts</p>
+                <h1 class="slds-page-header__title slds-truncate" title="My Accounts">My Contacts</h1>
+                <!-- / HEADING AREA -->
+            </div>
+            <div class="slds-col slds-no-flex slds-grid slds-align-top">
+                <div class="show">
+                    <c:RecordTypeComponent/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / PAGE HEADER -->
+    
+    <c:ContactSearch/>
+    
+    <c:ContactList/>
+</aura:component>

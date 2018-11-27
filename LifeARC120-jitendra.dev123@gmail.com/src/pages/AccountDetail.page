@@ -1,0 +1,35 @@
+<apex:page controller="AccountInsert" showHeader="true" sidebar="true">
+<apex:form >
+<apex:pageBlock title="Account Edit">
+<apex:pageMessages />
+
+<apex:pageBlockButtons >
+ 
+<apex:commandButton action="{!save}" value="Save"/>
+<apex:commandButton action="{!cancel}" value="Cancel"/>
+</apex:pageBlockButtons>
+
+<apex:pageBlockSection columns="2" title="Account Information" collapsible="true">
+<apex:outputfield value="{! Account.Ownerid}"/>
+<apex:inputField value="{! Account.Name}"/>
+
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="2" title="Address Information" collapsible="true">
+
+<apex:inputField value="{! Account.BillingCity}"/>
+<apex:inputField value="{! Account.BillingState}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="2" title="Additional Information">
+
+
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="1" title="Description Information">
+
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

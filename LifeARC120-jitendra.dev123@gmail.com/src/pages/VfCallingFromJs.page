@@ -1,0 +1,13 @@
+<apex:page standardController="Account">
+    <script>
+      function callingVf(){
+          alert('hello');
+        Window.open('/apex/AccountDetail');
+        }
+    </script>
+    <apex:form >
+   
+        <apex:commandButton style="color:red" value="push me" onclick="callingVf()"/>
+        
+    </apex:form>
+</apex:page>

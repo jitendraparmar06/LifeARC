@@ -1,0 +1,19 @@
+<apex:page controller="AccountApexUpdate" showHeader="true" sidebar="false">
+    <apex:pageMessages id="msg"/>    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:outputPanel >	
+                <apex:outputText value="Enter Account Name:"/>&nbsp;&nbsp;&nbsp;
+                <apex:inputText value="{!accVar}"/> &nbsp;                   
+                <apex:actionStatus id="actStatusId" >
+                    <apex:facet name="start" >
+                        <img src="/img/loading.gif" />                    
+                    </apex:facet>
+                </apex:actionStatus>  
+            </apex:outputPanel>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="submit" action="{!searchAccount}" status="actStatusId" reRender="msg"/>               
+            </apex:pageBlockButtons>
+        </apex:pageBlock>	
+    </apex:form>
+</apex:page>

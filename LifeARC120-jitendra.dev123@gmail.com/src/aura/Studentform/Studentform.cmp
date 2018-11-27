@@ -1,0 +1,38 @@
+<aura:component controller="StudentController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+    <!-- Attribute declaration -->
+    <aura:attribute name="studentObj" type="Student__c" default="{ 'sobjectType': 'Student__c',
+                                                                 'Name':''}"/>
+    
+    <div class="slds-grid">
+        <lightning:card title="New Student" footer="Click on Save button to create new Student.">
+           
+            
+            <!-- Body -->
+            <p class="slds-p-horizontal_small">
+                <lightning:input aura:id="stdName"
+                                 label="Student Name"
+                                 type="String"
+                                 required="true"
+                                 value="{!v.studentObj.Name}"/>
+                <lightning:input aura:id="stdClass"
+                                 label="Class"
+                                 type="String"
+                                 value="{!v.studentObj.Class__c}"/>
+                <lightning:input aura:id="stdRoll"
+                                 label="Roll No"
+                                 type="Number"
+                                 value="{!v.studentObj.Roll_No__c}"/>
+            </p>
+            <!--/ Body -->
+             <!-- Save button -->
+            <aura:set attribute="actions">
+                <lightning:button aura:id="saveId"
+                                  label="Save"   
+                                  onclick="{!c.doSave}"/>
+            </aura:set>
+            <!--/ Save button -->
+        </lightning:card>
+    </div>
+    
+</aura:component>

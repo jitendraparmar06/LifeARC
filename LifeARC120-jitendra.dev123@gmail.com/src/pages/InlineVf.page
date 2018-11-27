@@ -1,0 +1,11 @@
+<apex:page standardController="Contact" extensions="InlineController" >
+    <apex:form >
+    <apex:pageBlock title="Account information">
+        Account Number: <apex:outputField value="{!accRec.name}"/><br/>
+
+        Account Name:<apex:outputField value="{!accRec.accountnumber}"/><br/>
+        Annual revenue:<apex:outputField value="{!accRec.annualrevenue}"/>
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

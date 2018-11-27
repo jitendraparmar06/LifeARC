@@ -1,0 +1,36 @@
+<aura:component controller = "OpportunityListClass"  implements="force:appHostable,flexipage:availableForAllPageTypes" 
+                access="global">
+    <aura:attribute name="opportunities" type="list"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout">
+        <thead>
+            <tr class="slds-text-heading--label">
+                <th scope="col"><div class="slds-truncate" title="ID">ID</div></th>
+                 <th scope="col"><div class="slds-truncate" title="Name">Opportunity Name</div></th>
+                <th scope="col"><div class="slds-truncate" title="Name">AccountId</div></th>
+                <th scope="col"><div class="slds-truncate" title="Type">probability</div></th>
+                <th scope="col"><div class="slds-truncate" title="Number Of Employees">stageName</div></th>
+                <th scope="col"><div class="slds-truncate" title="Ticker Symbol">Close Date</div></th>
+                <th scope="col"><div class="slds-truncate" title="Phone">Opportunity Currency</div></th>
+                <th scope="col"><div class="slds-truncate" title="Delete">Amount</div></th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.opportunities}" var ="x">
+                <tr>
+                    <a href="{! 'https://devtech1-dev-ed.lightning.force.com/lightning/r/sObject/' + x.Id + '/view'}">
+                    <p><td scope="row"><div class="slds-truncate" title="{!x.Id}">{!x.Id}</div></td></p>
+                </a>
+                     <td><div class="slds-truncate" title="{!x.Name}">{!x.Name}</div></td>
+                    <td><div class="slds-truncate" title="{!x.AccountId}">{!x.AccountId}</div></td>
+                    <td><div class="slds-truncate" title="{!x.Type}">{!x.Probability}</div></td>
+                    <td><div class="slds-truncate" title="{!x.NumberOfEmployees}">{!x.StageName}</div></td>
+                    <td><div class="slds-truncate" title="{!x.NumberOfEmployees}">{!x.CloseDate}</div></td>
+                    <td><div class="slds-truncate" title="{!x.TickerSymbol}">{!x.OpportunityCurrency}</div></td>
+                    <td><div class="slds-truncate" title="{!x.Phone}">{!x.Amount}</div></td>
+                </tr>
+            </aura:iteration>                            
+        </tbody>
+    </table>
+</aura:component>

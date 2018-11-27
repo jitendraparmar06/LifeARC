@@ -1,0 +1,24 @@
+<apex:page controller="SaveRecordController" id="p1">    
+    <script>
+    function myFunction() {
+        var y = parseInt(document.getElementById("p1:form:txt1").value);
+        alert('this is a first value'+y);
+        var z = parseInt(document.getElementById("p1:form:txt2").value);
+        alert('this is a second value'+z);
+        var x = y+z;
+        alert('this is a sumA value'+x);
+        document.getElementById("demo").innerHTML = x;
+        sumOfvalue(x); 
+    }
+    </script>
+    <apex:form id="form">        
+        Enter first number: <apex:inputText id="txt1"/>
+        Enter second number: <apex:inputText id="txt2"/>
+        <apex:commandButton value="submit" onClick="myFunction()"/>
+        <p id="demo"></p>
+        <apex:actionFunction name="sumOfvalue" action="{!saveRecord}" reRender="">
+            <apex:param name="param1" value="x" assignTo="{!sumOf}" /> 
+        </apex:actionFunction>
+      
+    </apex:form>
+</apex:page>
