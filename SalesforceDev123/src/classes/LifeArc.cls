@@ -5,5 +5,6 @@ public class LifeArc {
  	System.debug('this is amother team');
  	
  	return accList;
+ 	
  }
 }
