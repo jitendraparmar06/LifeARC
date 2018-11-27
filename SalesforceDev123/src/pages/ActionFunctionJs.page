@@ -1,0 +1,19 @@
+<apex:page controller="ActionFunctionController">
+    <script>
+    	function jsMethod(){
+         actionFun();
+         Alert('create Account');
+        }
+    </script>
+    <apex:form >
+    	<apex:pageBlock >
+            Account Name: <apex:inputText value="{!accName}"/>
+        	<apex:actionFunction name="actionFun" action="{!createAccount}" rerender="block1"/>
+            <apex:commandButton value="create Account" onClick="jsMethod()" />
+        </apex:pageBlock>
+        <apex:pageBlock id="block1">
+            <apex:outputText value="{!accName}"/>
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

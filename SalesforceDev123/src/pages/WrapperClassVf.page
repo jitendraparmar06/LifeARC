@@ -1,0 +1,45 @@
+<apex:page controller="wrapperClass" sidebar="false" showHeader="true">
+    <apex:form >
+        <apex:pageMessages id="msg"/>
+        <apex:pageBlock title="Edit Information in Account" mode="edit">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton value="Change Type" action="{!Changetype}" reRender="theTable,msg" status="actStatusId">
+                        <apex:actionStatus id="actStatusId" >
+                            <apex:facet name="start" >
+                                <img src="/img/loading.gif" />                    
+                            </apex:facet>
+                        </apex:actionStatus>   
+                    </apex:commandButton>
+                    <apex:inputField value="{!anacc.type}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>          
+                <apex:pageBlockTable value="{!accwrap}" var="a"  id="theTable">
+                    <apex:column headerValue="All accounts name">
+                        <apex:inputCheckbox value="{!a.selected}"/>
+                        <apex:actionSupport event="onclick" action="{!getselected}" reRender="other_block"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <apex:outputField value="{!a.acc.name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Owner name">
+                        <apex:outputField value="{!a.acc.Ownerid}"/>
+                    </apex:column>
+                    <apex:column headerValue="Type">
+                        <apex:outputField value="{!a.acc.Type}"/>
+                    </apex:column>
+                    <apex:column headerValue="Last modify">
+                        <apex:outputField value="{!a.acc.Website}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+          
+        </apex:pageBlock>
+		<apex:outputPanel id="other_block">
+			<apex:pageBlock rendered="{!if(selectedaccount.size > 0, true, false)}">
+				<apex:pageBlockTable value="{!selectedaccount}" var="v">
+					<apex:column value="{!v.Name}"/>
+					<apex:column value="{!v.Type}"/>
+					<apex:column value="{!v.Website}"/>
+				</apex:pageBlockTable>            
+			</apex:pageBlock>
+		</apex:outputPanel>
+    </apex:form>
+</apex:page>

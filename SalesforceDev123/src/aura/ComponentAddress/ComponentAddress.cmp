@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="name" type="String" required="false"/>
+    <aura:attribute name="addLine1" type="String" required="false"/>
+    <aura:attribute name="addLine2" type="String" required="false"/>
+    <aura:attribute name="addLine3" type="String" required="false"/>
+    <aura:attribute name="active" type="Boolean" required="false"/>
+    <aura:attribute name="company1" type="String" required="false"/>
+    <aura:attribute name="originCity" type="String" required="false"/>
+    <aura:attribute name="originState" type="String" required="false"/>
+    <aura:attribute name="originZip" type="String" required="false"/>
+    <aura:attribute name="originCountry" type="String" required="false"/>
+    
+    <div class="slds-form-element__control">
+        <ui:inputText aura:id="aName" label="Name" value="{!v.name}" class="slds-input"/>
+        <ui:inputText aura:id="originL1" label="Origion Address Line1" value="{!v.addLine1}" class="slds-input"/>
+        <ui:inputText aura:id="originL2" label="Origion Address Line2" value="{!v.addLine2}" class="slds-input"/>
+        <ui:inputText aura:id="originL3" label="Origion Address Line3" value="{!v.addLine3}" class="slds-input"/>
+        <ui:inputCheckbox aura:id="checkbox" label="Active" value="{!v.active}" class="slds-input"/>
+        <ui:inputText aura:id="company" label="Company Code" value="{!v.company1}" class="slds-input"/>
+        <ui:inputText aura:id="originC" label="Origin City" value="{!v.OriginCity}" class="slds-input"/>
+        <ui:inputText aura:id="orginS" label="Origin State" value="{!v.originState}" class="slds-input"/>
+        <ui:inputText aura:id="orginS" label="Origin Zip" value="{!v.originZip}" class="slds-input"/>
+        <ui:inputText aura:id="orginS" label="Origin Country" value="{!v.originCountry}" class="slds-input"/>
+        
+    </div>
+</aura:component>

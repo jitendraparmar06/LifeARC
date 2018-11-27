@@ -1,0 +1,51 @@
+<apex:page standardController="Opportunity" sidebar="false" showHeader="false">
+    <apex:sectionHeader title="Opportunity Edit" subtitle="New Opportunity" help="help for this page" printUrl="www.google.com"/>
+    <apex:form >
+        <apex:pageBlock title="Opportunity Edit">
+             <apex:pageBlockButtons >
+                 <apex:commandButton value="Save" action="{!save}"/>
+                 <apex:commandButton value="Save & New" action="{!quicksave}"/>
+                 <apex:commandButton value="cancel" action="{!cancel}"/>
+              </apex:pageBlockButtons>
+              <apex:pageBlockSection title="Opportunity Information" columns="2">             
+                    <apex:inputField value="{!Opportunity.ownerId}"/>
+                    <apex:inputField value="{!Opportunity.Amount}"/>
+                    <apex:inputField value="{!Opportunity.IsPrivate}"/>
+                    <apex:inputField value="{!Opportunity.CloseDate}"/>
+                    <apex:inputField value="{!Opportunity.Name}"/>
+                    <apex:inputField value="{!Opportunity.NextStep}"/>
+                    <apex:inputField value="{!Opportunity.AccountId}"/>
+                    <apex:inputField value="{!Opportunity.StageName}"/>
+                    <apex:actionRegion >                         
+                        <apex:inputField value="{!Opportunity.Type}">
+                             <apex:actionSupport event="onchange" reRender="test" status="actStatusId">
+                                     <apex:actionStatus id="actStatusId" >
+                                        <apex:facet name="start" >
+                                          <img src="/img/loading.gif" />                    
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                             </apex:actionSupport>
+                         </apex:inputfield>   
+                     </apex:actionRegion>                                     
+                    <apex:inputField value="{!Opportunity.Probability}"/>
+                    <apex:inputField value="{!Opportunity.LeadSource}"/> 
+                    <apex:inputField value="{!Opportunity.CampaignId}"/>
+                    <apex:inputField value="{!Opportunity.Discount_Percent_Status__c}"/>
+                    <apex:inputField value="{!Opportunity.ContractId}"/>  
+                    <apex:outputPanel id="test">                              
+                    <apex:inputField value="{!Opportunity.Test_Field__c}" rendered="{!if(Opportunity.Type == 'New Customer',true,false)}"/> 
+                    </apex:outputPanel>                                    
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Additional Information" columns="2">
+                    <apex:inputField value="{!Opportunity.OrderNumber__c}"/>
+                    <apex:inputField value="{!Opportunity.MainCompetitors__c}"/>
+                    <apex:inputField value="{!Opportunity.CurrentGenerators__c}"/>
+                    <apex:inputField value="{!Opportunity.DeliveryInstallationStatus__c}"/>
+                    <apex:inputField value="{!Opportunity.TrackingNumber__c}"/>
+                  </apex:pageBlockSection>
+                <apex:pageBlockSection title="Description Information" >
+                    <apex:inputfield value="{!Opportunity.Description}"/>
+                </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

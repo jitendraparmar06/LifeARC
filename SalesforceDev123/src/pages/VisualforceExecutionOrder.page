@@ -1,0 +1,7 @@
+<apex:page controller="Sample" action="{!sav}">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:outputText value="{!mem}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

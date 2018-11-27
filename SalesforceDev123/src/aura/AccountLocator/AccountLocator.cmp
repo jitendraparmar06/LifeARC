@@ -1,0 +1,24 @@
+<aura:component controller="AccountController"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+
+    <!-- Id of the Account the page hosting this component is showing -->
+    <aura:attribute name="recordId" type="String" />
+
+    <aura:attribute name="accounts" type="Account[]"/>
+    <aura:attribute name="selectedAccount" type="Account"/>
+    
+	<!-- Set up an init handler to retrieve data when component is initialized -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div>
+        <div class="map">
+            <c:AccountMap accounts="{!v.accounts}" selectedAccount="{!v.selectedAccount}"/>
+        </div>
+        
+        <div class="list">
+            <c:AccountList accounts="{!v.accounts}"
+                           accountSelected="{!c.onAccountSelected}"/>
+        </div>        
+    </div>
+
+</aura:component>

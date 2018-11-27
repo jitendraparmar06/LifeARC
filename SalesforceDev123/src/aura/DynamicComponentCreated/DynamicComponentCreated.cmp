@@ -1,0 +1,11 @@
+<aura:component >
+   <aura:attribute name="IsBottonVisible" type="boolean" default="false"/>
+
+    <lightning:button variant="brand" label="Create New Button"
+                      title="Create New Button" onclick="{! c.createComponent }" />
+    <BR/><BR/>
+        <p>Dynamically created button</p>     <BR/><BR/>
+
+        {!v.body}
+
+</aura:component>

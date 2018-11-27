@@ -1,0 +1,10 @@
+<!--Sample.cmp-->
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable">
+    <div class="slds-m-around_xx-large">
+        <lightning:buttonMenu  iconName="utility:settings" alternativeText="Action" onselect="{!c.handleMenuSelect}">
+            <lightning:menuItem label="New" iconName="utility:new" value="new"/>
+            <lightning:menuItem label="Edit" iconName="utility:edit" value="edit"/>
+            <lightning:menuItem label="Delete" iconName="utility:delete" value="delete"/>
+        </lightning:buttonMenu>
+    </div>
+</aura:component>

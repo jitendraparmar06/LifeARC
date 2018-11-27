@@ -1,0 +1,41 @@
+<apex:page standardController="Account">
+    <head>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+        <script>
+            function doGeocode() {
+            //var addr = document.getElementById("s1").value+''+document.getElementById("s2").value+''+document.getElementById("s3").value+''+document.getElementById("s4").value;
+            var addr = document.getElementById("s1").value;
+  // Get geocoder instance
+  var geocoder = new google.maps.Geocoder();
+
+  // Geocode the address
+  geocoder.geocode({
+    'address': addr.value
+  }, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
+
+      // set it to the correct, formatted address if it's valid
+      addr.value = results[0].formatted_address;
+
+      // show an error if it's not
+    } else alert("Invalid address");
+  });
+};
+            </script>
+    </head>
+   
+    <apex:form >
+        <apex:pageBlock title="Account Details">
+            <apex:pageBlockSection columns="2">
+                <apex:inputField value="{!Account.BillingState}"/>
+                <!-- <apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.Industry}"/>
+                 <apex:inputField value="{!Account.BillingStreet}" id="s1"/>
+                <apex:inputField value="{!Account.BillingCity}" id="s2"/>
+                 <apex:inputField value="{!Account.BillingState}" id="s3"/>
+                <apex:inputField value="{!Account.BillingCountry}" id="s4"/>-->
+                <apex:commandButton value="submit" onclick="doGeocode()"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+.THIS .selected{
+    color:orange;
+}
+.THIS.slds-spinner_container {  
+  z-index: 1000000;
+  position: fixed;   
+}

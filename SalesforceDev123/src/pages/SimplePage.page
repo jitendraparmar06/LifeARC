@@ -1,0 +1,9 @@
+<apex:page standardController="Account" sidebar="false" showHeader="true">
+    <apex:form >
+        <apex:pageblock title="{!$User.FirstName}"><br/>
+            you are viewing: <apex:inputField value="{!account.Name}"/> Account.
+            <b> this is new Account here</b>
+        </apex:pageblock>
+    </apex:form> 
+     <apex:detail />
+</apex:page>

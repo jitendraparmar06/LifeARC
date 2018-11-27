@@ -1,0 +1,11 @@
+public class CreateAccountController {
+
+	@AuraEnabled
+
+    public static List<Account> fetchAllAccounts(){
+
+        return [Select Id, Name From Account LIMIT 10];
+
+    }
+
+}

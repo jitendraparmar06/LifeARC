@@ -1,0 +1,12 @@
+<apex:page standardController="Account" extensions="AccountContacts">
+   <apex:form >
+    <apex:pageBlock title="Account {!account.Name} Contact List">
+    <apex:pageBlockSection title="List of Contacts">
+         <apex:repeat value="{!Contacts}" var="c">
+            <apex:outputText value="{!c.Firstname}"/>
+            <apex:outputText value="{!c.LastName}"/>   
+         </apex:repeat>
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+ </apex:form>     
+</apex:page>

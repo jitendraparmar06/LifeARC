@@ -1,0 +1,14 @@
+<apex:page controller="AccountController1" extensions="ContactController1" sidebar="false" showHeader="true">
+    <apex:form >
+       <apex:pageBlock title="Accounts">
+            <apex:pageBlockTable value="{!accountList}" var="acc">
+                <apex:column headerValue="Name">
+                    <apex:outputField value="{!acc.Name}"/>
+                </apex:column>
+                <apex:column headerValue="Industry">
+                	<apex:outputField value="{!acc.Industry}"/>
+               </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

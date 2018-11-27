@@ -1,0 +1,13 @@
+<apex:page controller="accsearchcontroller" > 
+<apex:form > 
+<apex:inputText value="{!searchstring}" label="Input"/> 
+<apex:commandButton value="Search records" action="{!search}"/> 
+<apex:commandButton value="Clear records" action="{!clear}"/> 
+<apex:pageBlock title="Search Result"> 
+<apex:pageblockTable value="{!acc}" var="a"> 
+<apex:column value="{!a.name}"/> 
+<apex:column value="{!a.id}"/> 
+</apex:pageBlockTable> 
+</apex:pageBlock> 
+</apex:form> 
+</apex:page>

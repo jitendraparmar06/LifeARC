@@ -1,0 +1,42 @@
+<apex:page controller="AccountApexController" sidebar="false" showHeader="true" tabStyle="Account">
+    <apex:sectionHeader title="Account Detail Page" subtitle="Account Information" help="google Link" printUrl="https://www.google.com"/>
+    <apex:form >
+        <apex:pageBlock title="Account Detail">
+            <apex:pageBlockSection title="Enter Account Information" collapsible="true" >
+                <apex:outputLabel value="Account Name"/>
+                <apex:inputText value="{!accName}"/>
+                <apex:outputLabel value="Account Industry"/>
+               <!-- <apex:selectList value="{!accIndustry}" size="1" title="Industry" style="Color:purple">
+                    <apex:selectOption itemLabel="Engineering" itemValue="Engineering"/>
+                    <apex:selectOption itemLabel="Mechanical" itemValue="Mechanical"/>
+                    <apex:selectOption itemLabel="Science" itemValue="Science"/>
+                    <apex:selectOption itemLabel="Agriculture" itemValue="Agriculture"/>
+                    <apex:selectOption itemLabel="Education" itemValue="Education"/>
+                    <apex:selectOption itemLabel="Construction" itemValue="Construction"/>
+                    <apex:selectOption itemLabel="Banking" itemValue="Banking"/>
+                    <apex:selectOption itemLabel="Finance" itemValue="Finance"/>
+                    <apex:selectOption itemLabel="Entertainment" itemValue="Entertainment"/>
+                </apex:selectList>-->
+                 <apex:selectList value="{!industry}" multiselect="false" size="1">
+            <apex:selectOptions value="{!MySelectOptions}"/>
+        </apex:selectList>
+
+                <apex:outputLabel value="Account Type"/>
+                <apex:selectList value="{!accType}" size="1" title="Type" style="black">
+                    <apex:selectOption itemLabel="Platinum" itemValue="Platinum"/>
+                    <apex:selectOption itemLabel="Prospect" itemValue="Prospect"/>
+                    <apex:selectOption itemLabel="Customer" itemValue="Customer"/>
+                    <apex:selectOption itemLabel="Customer-Direct" itemValue="Customer-Direct"/>
+                    <apex:selectOption itemLabel="Pending" itemValue="Pending"/>
+                    <apex:selectOption itemLabel="Customer-Channel" itemValue="Customer-Channel"/>
+                    <apex:selectOption itemLabel="Installation Partner" itemValue="Installation Partner"/>
+                    <apex:selectOption itemLabel="Others" itemValue="Others"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="save"  action="{!save}" title="saving"/>
+                <apex:commandButton value="Cancel"  action="{!cancel}" title="Cancel"/>
+            </apex:pageBlockButtons> 
+        </apex:pageBlock>   
+    </apex:form>
+</apex:page>

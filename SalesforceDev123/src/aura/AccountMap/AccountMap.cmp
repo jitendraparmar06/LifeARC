@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="accounts" type="Account[]"/>
+    <aura:attribute name="selectedAccount" type="Account"/>
+
+    <!-- The Leaflet map object -->
+    <aura:attribute name="map" type="Object"/>
+    <!-- The Leaflet markers -->
+    <aura:attribute name="markers" type="Object"/>
+    
+    <!-- Handler to display markers when account list changes -->
+    <aura:handler name="change" value="{!v.accounts}" action="{!c.accountsChangeHandler}"/>
+
+    <!-- Handler to re-center the map when selected account changes -->
+    <aura:handler name="change" value="{!v.selectedAccount}" action="{!c.selectedAccountChangeHandler}"/>
+    
+    <div aura:id="map"></div>
+    
+    <!-- Load the leaflet library (http://leafletjs.com for details) -->
+    <ltng:require styles="/resource/leaflet/leaflet.css" 
+                  scripts="/resource/leaflet/leaflet.js"
+             	  afterScriptsLoaded="{!c.jsLoaded}" />
+
+</aura:component>

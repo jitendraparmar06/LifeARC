@@ -1,0 +1,5 @@
+<apex:page controller="ExampleController">
+T1: {!t1} <br/>
+T2: {!t2} <br/>
+
+</apex:page>

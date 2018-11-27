@@ -1,0 +1,41 @@
+<apex:page controller="newOpportunityController" tabStyle="Opportunity" sidebar="false">
+    <script>
+    function confirmCancel() {
+        var isCancel = confirm("Are you sure you wish to cancel?");
+        if (isCancel) return true;
+        return false;
+    }
+    </script>
+    
+    <apex:sectionHeader title="New Customer Opportunity" subtitle="Step 1 of 3" help="https://help.salesforce.com/articleView?err=1&id=contacts_overview.htm&type=5"/>
+    <apex:form >
+        <apex:pageBlock title="Customer Information" mode="edit">
+            <apex:outputPanel >
+                <div style="text-align: center">
+                    <apex:commandButton action="{!cancel}" value="Cancel"
+                                        onclick="return confirmCancel()" immediate="true"/>
+                     <apex:commandButton action="{!step2}" value="Next"/>
+                </div>
+            </apex:outputPanel>
+            <apex:pageBlockSection title="Account Information" collapsible="false" columns="2">
+                <apex:inputField value="{!account.name}"/>
+                <apex:inputField value="{!account.Industry}"/>
+                <apex:inputField value="{!account.Type}"/>
+                <apex:inputField value="{!account.Site}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Information" collapsible="true" columns="2">
+                <apex:inputField value="{!contact.firstName}"/>
+                <apex:inputField value="{!contact.lastName}"/>
+                <apex:inputField value="{!contact.phone}"/>
+                 <apex:inputField value="{!contact.Email}"/>
+            </apex:pageBlockSection>
+            <apex:outputPanel >
+                <div style="text-align: center">
+                    <apex:commandButton action="{!cancel}" value="Cancel"
+                                        onclick="return confirmCancel()" immediate="true"/>
+                    <apex:commandButton action="{!step2}" value="Next"/>
+                </div>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

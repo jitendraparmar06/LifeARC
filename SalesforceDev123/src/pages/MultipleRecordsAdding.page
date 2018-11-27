@@ -1,0 +1,42 @@
+<apex:page Controller="AddmultipleRecordClass">
+    <apex:form >
+        <apex:pageBlock title="Account Detail">
+        <apex:pageMessages />
+        <apex:variable var="rowNumber" value="{!0}"/>
+        <apex:pageBlock id="pb">
+            <apex:pageBlockTable value="{!accountList}" var="acc">
+             <!--   <apex:column headerValue="No." style="width:20px; text-align:center;" headerClass="centertext">
+                    <apex:outputLabel value="{!rowNumber}" style="text-align:center;">
+                        <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                    </apex:outputLabel>
+                </apex:column> -->
+                <apex:column headerValue="Account Name">
+                    <apex:inputField value="{!acc.Name}" required="false"/>
+                </apex:column>
+                <apex:column headerValue="Account Number">
+                    <apex:inputField value="{!acc.AccountNumber}"/>
+                </apex:column>
+                <!--  <apex:column headerValue="Account Type">
+<apex:inputField value="{!acc.Type}"/>
+</apex:column> -->
+                <apex:column headerValue="Industry">
+                    <apex:inputField value="{!acc.Industry}"/>
+                </apex:column>
+                <apex:column headerValue="Action">
+                    <apex:commandButton value="Delete" action="{!deleteRow}" rerender="pb">
+                        <apex:param name="rowIndex" value="{!rowNumber}"/>
+                    </apex:commandButton>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:commandButton action="{!addRow}" value="Add Contact" rerender="pb"/>      
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveAccount}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+                <apex:commandButton value="Refresh" onclick="window.location.top.reload();" />
+                <apex:commandButton value="Reset" onclick="this.form.reset();return false;" />
+
+            </apex:pageBlockButtons>           
+        </apex:pageBlock>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

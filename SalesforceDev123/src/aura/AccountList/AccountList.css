@@ -1,0 +1,63 @@
+.THIS {
+    list-style-type: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+    background: #FFFFFF;
+    height: 100%;
+    min-height: 320px;
+}
+
+.THIS>li {
+	position: relative;
+    height: 58px;
+    overflow: hidden;
+    border-bottom: solid 1px #DDDDDD;
+    padding: 0;
+    margin: 0;
+}
+
+.THIS>li a {
+    display: block;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+	height: 100%;
+}
+
+.THIS>li a:hover {
+    background-color: #E8F4FB;
+    text-decoration: none;
+}
+
+.THIS>li a:active {
+    background-color: #D8F4FB;
+    text-decoration: none;
+}
+
+.THIS>li img {
+    position:absolute;
+    top: 6px;
+    left: 4px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.THIS>li p {
+    position:absolute;
+    top: 10px;
+    padding: 0;
+    margin: 0;
+    left: 60px;
+}
+
+.THIS>li span {
+	position:absolute;
+    left: 60px;
+	top: 30px;
+    display: block;
+    padding: 0;
+	margin: 0;
+    color: #999;
+    font-size: 14px;
+}

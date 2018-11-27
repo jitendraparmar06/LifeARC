@@ -1,0 +1,13 @@
+<apex:page controller="CustomSettingClass" showHeader="true" sidebar="false">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:selectList size="1" value="{!selectedItem}" >
+                <apex:selectOptions value="{!picklist}" />
+            </apex:selectList>
+            <apex:commandButton action="{!method1}" value="submit" rerender="show"/>
+        </apex:pageBlock>
+        <apex:pageBlock id="show">
+            <apex:outputText value="{!selectedItem}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
